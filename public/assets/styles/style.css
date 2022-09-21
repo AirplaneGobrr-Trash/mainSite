@@ -1,0 +1,145 @@
+body {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEyMCc+Cgk8ZGVmcz4KCQk8cGF0dGVybiBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJyBpZD0nYycgd2lkdGg9JzYwJyBoZWlnaHQ9JzEyMCcgeD0nMCcgeT0nMCcgdmlld0JveD0nMCAwIDUgMTAnPgoJCQk8cGF0aCBmaWxsLW9wYWNpdHk9JzAnIHN0cm9rZT0nIzI5MjkyOScgc3Ryb2tlLXdpZHRoPScwLjA5JyBkPSdNLTIsMUw3LDEwTS0yLDZMNywxNU0tMiwtNEw3LDUnLz4KCQk8L3BhdHRlcm4+CgkJPHBhdHRlcm4gcGF0dGVyblVuaXRzPSd1c2VyU3BhY2VPblVzZScgaWQ9J2MyJyB3aWR0aD0nNjAnIGhlaWdodD0nMTIwJyB4PScxMDAlJyB5PScwJyB2aWV3Qm94PScwIDAgNSAxMCc+CgkJCTxwYXRoIGZpbGwtb3BhY2l0eT0nMCcgc3Ryb2tlPScjMjkyOTI5JyBzdHJva2Utd2lkdGg9JzAuMDknIGQ9J003LDFMLTIsMTBNNyw2TC0yLDE1TTcsLTRMLTIsNScvPgoJCTwvcGF0dGVybj4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPSc1MCUnIGhlaWdodD0nMTAwJScgZmlsbD0ndXJsKCNjKScvPgoJPHJlY3QgeD0nNTAlJyB3aWR0aD0nNTAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjYzIpJy8+Cjwvc3ZnPg==');
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: white;
+
+}
+
+.cent {
+  text-align: center;
+
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
+}
+
+h5 {
+  color: white;
+}
+
+li {
+  color: white;
+}
+
+ol {
+  color: white;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.rainbow {
+  animation: color-change 60s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: red;
+  }
+
+  10% {
+    color: orange;
+  }
+
+  20% {
+    color: yellow;
+  }
+
+  30% {
+    color: green;
+  }
+
+  40% {
+    color: blue;
+  }
+
+  50% {
+    color: purple;
+  }
+
+  60% {
+    color: blue;
+  }
+
+  70% {
+    color: green;
+  }
+
+  80% {
+    color: yellow;
+  }
+
+  90% {
+    color: orange;
+  }
+
+  100% {
+    color: red;
+  }
+}
+
+
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  /*height: 100vh;*/
+}
+
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color:#0096FF;
+  color: white;
+  padding: 1.5em;
+  margin: 1em;
+  border-radius: 10px;
+  width: 20%;
+  justify-content: center;
+}
+
+.shrink:not(:hover) {
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+
+.shrink:hover {
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+}
+
+.box h1, p {
+  text-align: center;
+}

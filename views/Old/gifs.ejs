@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>APGB - Home</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/topvav.css">
+
+</head>
+
+<body>
+    <div class="topnav"></div>
+    <script src="/assets/scripts/topnav.js"></script>
+
+    <input type="text" value="Add A gif URL!" id="gifURL">
+    <button onclick="addGIF()">Ask to add Gif</button>
+
+    <div id="gifs" style="padding-top: 10px;"></div>
+    <script>
+        const memeDiv = document.getElementById('gifs');
+        const socket = io();
+        socket.emit("getGIFs")
+        socket.on("GIFs", (data) => {
+            console.log(data)
+            data.forEach(file => {
+                //when you click the meme copy the URL of the meme to the clipboard
+                const url = `/memesFiles/${file}`
+                //get file type (video or image)
+                const type = file.split(".")[1]
+                if (type === "mp4" || type === "webm" || type === "png" || type === "jpg") {
+                    const memeElm = document.createElement("video")
+                    memeElm.src = url;
+                    memeElm.classList.add("meme");
+                    //make the image smaller
+                    memeElm.style.width = "300px"
+                    memeElm.controls = true;
+                    memeDiv.appendChild(memeElm);
+                } else {
+                    const memeElm = document.createElement("img")
+
+                    memeElm.src = url;
+                    memeElm.classList.add("meme");
+                    //make the image smaller
+                    memeElm.style.width = "300px";
+                    memeDiv.appendChild(memeElm);
+                }
+            })
+        })
+        function addGIF() {
+            const url = document.getElementById("gifURL").value;
+            socket.emit("addGIF", url);
+        }
+    </script>
+</body>
+
+</html>
