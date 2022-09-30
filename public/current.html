@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Current Class</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <h1>Current time: <a id="time"></a></h1>
+    <div id="schools" class="schools">
+
+    </div>
+    <script>
+        var classes = {
+            Foothill: {
+                types: {
+                    0: [
+                        //M/T/Th/F
+                        { start: "7:29", end: "8:24", name:0 },
+                        { start: "8:30", end: "9:25", name:1 },
+                        { start: "9:31", end: "10:26", name:2 },
+                        { start: "10:32", end: "10:42", name:"FTV" },
+                        { start: "10:42", end: "11:37", name:3 },
+                        { start: "11:37", end: "12:07", name:"Lunch" },
+                        { start: "12:13", end: "13:08", name:4 },
+                        { start: "13:14", end: "14:09", name:5 },
+                        { start: "14:09", end: "14:24", name:"Break" },
+                        { start: "14:30", end: "15:25", name:6 }
+                    ],
+                    1: { 
+                        //Wednesday
+                        StaffMeeting: {start:"7:30", end: "8:30"},
+                        0: {start: "8:50",end: "9:35"},
+                        1: {start: "9:41",end: "10:26"},
+                        2: {start: "10:32",end: "11:17"},
+                        3: {start: "11:23",end: "12:08"},
+                        Lunch: {start: "12:08",end: "12:38"},
+                        4: {start: "12:44",end: "1:29"},
+                        5: {start: "1:35",end: "2:20"},
+                        Break: {start: "2:20",end: "2:35"},
+                        6: {start: "2:40",end: "3:25"}
+                    },
+                    2: {
+                        //Assembly Schedule
+                        // 8/19, 9/16, 1/27, 4/7
+
+                        0:{ start:"7:36",end: "8:24"},
+                        1:{ start:"8:30",end: "9:18"},
+                        2:{ start:"9:24",end: "10:12"},
+                        "3A":{ start:"10:18",end: "11:08"},
+                        "3B":{ start:"11:08",end: "11:58"},
+                        Lunch:{ start:"11:58",end: "12:28"},
+                        4:{ start:"12:34",end: "1:22"},
+                        5:{ start:"1:28",end: "2:16"},
+                        Break:{ start:"2:16",end: "2:31"},
+                        6:{ start:"2:37",end: "3:25"},
+                    },
+                    3: {
+                        //CCR Schedule (Wednesday)
+                        //9/14, 10/12, 11/09, 1/25, 2/8, 3/8, 4/5, 5/3
+
+                        StaffMeeting: {start:"7:30",end: "8:30"},
+                        0: {start:"8:50",end: "9:31"},
+                        1: {start:"9:37",end: "10:18"},
+                        2: {start:"0:26",end: "11:07"},
+                        3: {start:"1:14",end: "11:55"},
+                        Lunch: {start:"1:55",end: "12:25"},
+                        "4w/CCR": {start:"12:31",end: "1:36"},
+                        5: {start:"1:42",end: "2:23"},
+                        Break: {start:"2:23",end: "2:38"},
+                        6: {start:"2:44",end: "3:25"}
+                    },
+                    4: {
+                        //Minimum Day Schedule
+                        //9/2, 9/20, 10/21, 3/31, 5/30, 6/2
+
+                        0: {start: "7:41", end: "8:18"},
+                        1: {start: "8:30", end: "9:07"},
+                        2: {start: "9:13", end: "9:50"},
+                        3: {start: "9:56", end: "10:33"},
+                        Break: {start: "10:33", end: "10:48"},
+                        4: {start: "10:54", end: "11:31"},
+                        5: {start: "11:37", end: "12:14"},
+                        6: {start: "12:20", end: "12:57"},
+                        5: {start: "1:27", end: "3:25"}
+                    },
+                    5: {
+                        //CAASPP Testing
+
+                        0: {start: "7:26", end: "8:24"},
+                        1: {start: "8:30", end: "10:28"},
+                        Break: {start: "10:28", end: "10:43"},
+                        3: {start: "10:49", end: "12:51"},
+                        Lunch: {start: "12:51", end: "1:21"},
+                        5: {start: "1:27", end: "3:25"}
+                    },
+                    6: {
+                        //Finals Schedule
+                        //Dec 19-21/ May 31-June 2
+
+                        // 1st Exam
+                        // Period 1, 2 or 3
+                        // 8:30 - 10:30
+                        // Break 10:30 - 10:45
+                        // Passing 10:45 - 10:50
+                        // 2nd Exam
+                        // Period 4, 5 or 6/0
+                        // 10:50 - 12:50
+                    }
+                },
+                days: {
+                    monday:0,
+                    tuesday:0,
+                    wednesday: 1,
+                    thursday: 0,
+                    friday: 0 
+                },
+                classes: {
+                    "1": "Science",
+                    "2": "English",
+                    "3": "PE",
+                    "4": "History",
+                    "5": "Math",
+                    "6": "Dir"
+                }
+            },
+            Hews: {
+                types: {
+                    0: [
+                        //M/T/Th/F
+                        { start: "8:20", end: "9:06", name:1 },
+                        { start: "9:11", end: "9:55", name:2 },
+                        { start: "10:00", end: "10:44", name:3 },
+                        { start: "10:32", end: "10:42", name:"Break" }, //Not done below
+                        { start: "10:42", end: "11:37", name:4 },
+                        { start: "11:37", end: "12:07", name:5 },
+                        { start: "12:13", end: "13:08", name:"Lunch" },
+                        { start: "13:14", end: "14:09", name:6 },
+                        { start: "14:09", end: "14:24", name:7 }
+                    ],
+                },
+                days: {
+                    monday:0,
+                    tuesday:0,
+                    wednesday: 1,
+                    thursday: 0,
+                    friday: 0 
+                },
+                classes: {
+                    "1": "Science",
+                    "2": "English",
+                    "3": "PE",
+                    "4": "History",
+                    "5": "Math",
+                    "6": "Dir"
+                }
+            }
+        }
+        const title = document.getElementById("title")
+        const timeElm = document.getElementById("time")
+        const schoolsElm = document.getElementById("schools")
+
+        function isValid(date, h1, m1, h2, m2) {
+            var h = date.getHours();
+            var m = date.getMinutes();
+            console.log(h,m,h1,m1,h2,m2)
+            return (h1 < h || h1 == h && m1 <= m) && (h < h2 || h == h2 && m <= m2);
+        }
+
+        function getPer(time, bellType){
+            for (var a in bellType){
+                var times = bellType[a]
+                var start = times.start.split(":")
+                var end = times.end.split(":")
+                var h1 = start[0]
+                var m1 = start[1]
+                var h2 = end[0]
+                var m2 = end[1]
+                if (isValid(time, h1, m1, h2, m2)){
+                    return a
+                }
+            }
+            return 69
+        }
+
+        function isPassing(time, bellType){
+            for (var a in bellType){
+                var times = bellType[a]
+                if (!bellType[Number(a)-1]) continue
+                var timesBefore = bellType[Number(a)-1]
+                var end = times.end.split(":")
+                var endbefore = timesBefore.end.split(":")
+                var h1 = end[0]
+                var m1 = end[1]
+                var h2 = endbefore[0]
+                var m2 = endbefore[1]
+                if (isValid(time, h1, m1, h2, m2)){
+                    return a
+                }
+            }
+            return 69
+        }
+
+        function getNextPer(currentPer, bellType){
+            var a = Number(currentPer) + 1
+            return bellType[a]
+        }
+
+        function getTimeUntilEnd(startDate, endDate){
+            var diff = endDate.getTime() - startDate.getTime();
+            return (diff / 60000);
+        }
+
+        async function normal(time, info, schoolDiv){
+            var day = time.toLocaleString('en-us', {weekday:'long'}).toLowerCase()
+            var bellType = info.days[day] //This will check for what bell type to use
+            var times = info.types[bellType]
+            var indexOfCurrentPer = Number(await getPer(time, times))
+            var currentPerTimes = null
+            var nextPer = null
+            var timeUntilend = null
+
+            //console.log(isPassing(time, times))
+
+            if (indexOfCurrentPer == 69) {
+                currentPerTimes = {name: "Passing"}
+                nextPer = {name: "We dont know"}
+            } else {
+                currentPerTimes = times[indexOfCurrentPer]
+                nextPer = getNextPer(indexOfCurrentPer, times)
+                
+            }
+            
+
+            var yes = document.createElement("h2")
+            yes.innerText = `Current per is: ${currentPerTimes.name}\nNext per is: ${nextPer.name}`
+            schoolDiv.append(yes)
+        }
+
+        function update() {
+            var time = new Date()
+            console.log(time)
+            schoolsElm.innerHTML = ""
+            timeElm.innerHTML = time.toLocaleString('en-us')
+            for (var thing in classes){
+                var info = classes[thing]
+
+                //Setup the school div
+                var schoolDiv = document.createElement("div")
+                schoolDiv.className = "school"
+                var schoolNameElm = document.createElement("h1")
+                schoolNameElm.innerText = thing
+                schoolDiv.append(schoolNameElm)
+                schoolsElm.append(schoolDiv)
+
+                //We need to check for spical events and fire dif functions...
+                normal(time, info, schoolDiv)
+            }
+        }
+        setInterval(update, 500)
+    </script>
+</body>
+
+</html>
