@@ -10,7 +10,8 @@ const fs = require('fs');
 
 //Custom Imports
 const console = require('./console.js');
-const db = require('./database.js');
+const dbClass = require("@airplanegobrr/database")
+const db = new dbClass()
 const discord = require('./discord.js');
 
 //Vars 

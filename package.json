@@ -1,13 +1,31 @@
 {
   "dependencies": {
+    "@airplanegobrr/database": "^1.0.2",
     "chalk": "^4.1.2",
     "cryptr": "^6.0.3",
     "discord.js": "^13.6.0",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
     "nodemon": "^2.0.16",
-    "quick.db": "^7.1.3",
     "serve-index": "^1.9.1",
     "socket.io": "^4.5.0"
-  }
+  },
+  "name": "mainsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AirplaneGobrr-Trash/mainSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AirplaneGobrr-Trash/mainSite/issues"
+  },
+  "homepage": "https://github.com/AirplaneGobrr-Trash/mainSite#readme",
+  "description": ""
 }
