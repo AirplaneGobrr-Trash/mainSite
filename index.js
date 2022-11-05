@@ -41,6 +41,11 @@ app.get('/about', (req, res) => {
     res.render("about")
 })
 
+app.get("/ip", (req, res)=>{
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+    res.type('text/plain').send(ip)
+})
+
 discord.start(app, io)
 
 io.on('connection', (socket) => {
