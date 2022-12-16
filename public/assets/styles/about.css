@@ -1,0 +1,63 @@
+.item1 { grid-area: main; }
+.item2 { grid-area: menu; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'main'
+    'menu';
+  gap: 10px;
+  
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.h1 {
+    font-size: 2em
+}
+
+.h2 {
+    font-size: 1.5em
+}
+
+
+.maina {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.boxa {
+  color: white;
+  padding: 0.5em;
+  margin: 0.5em;
+  justify-content: center;
+}
+
+.shrinka:not(:hover) {
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+
+.shrinka:hover {
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+.boxa img {
+  width: 100%;
+  height: auto;
+}
+
+.boxa h1, p {
+  text-align: center;
+}
