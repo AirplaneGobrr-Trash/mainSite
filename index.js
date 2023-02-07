@@ -46,6 +46,10 @@ app.get("/ip", (req, res)=>{
     res.type('text/plain').send(ip)
 })
 
+app.get("/server", (req, res)=>{
+    res.redirect("minecraft://?addExternalServer=Lucky%20World|airplanegobrr.us.to:25565")
+})
+
 discord.start(app, io)
 
 io.on('connection', (socket) => {
