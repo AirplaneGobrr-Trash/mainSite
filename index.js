@@ -1,18 +1,6 @@
 //Imports/Setup
 const express = require('express');
 const app = express();
-const serveIndex = require('serve-index')
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
-const fs = require('fs');
-
-//Custom Imports
-const console = require('./console.js');
-const dbClass = require("@airplanegobrr/database")
-const db = new dbClass()
-const discord = require('./discord.js');
 
 //Vars 
 const port = 8080
@@ -50,18 +38,6 @@ app.get("/server", (req, res)=>{
     res.redirect("minecraft://?addExternalServer=Lucky%20World|airplanegobrr.us.to:25565")
 })
 
-discord.start(app, io)
-
-io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('disconnect', () => {
-        console.log('user disconnected');
-    });
-
-    socket.onAny(console.log)
-});
-
-
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 })

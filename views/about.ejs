@@ -5,31 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>APGB - Home</title>
-    <script src="/socket.io/socket.io.js"></script>
+    <title>APGB - About</title>
+    
     <link rel="stylesheet" href="/assets/styles/style.css">
     <link rel="stylesheet" href="/assets/styles/topvav.css">
-    
+    <link rel="stylesheet" href="/assets/styles/about.css">
 </head>
 
 <body>
     <div class="topnav"></div>
     <script src="/assets/scripts/topnav.js"></script>
-    <div class="cent">
-        <h1>Hello Im <a class="rainbow">AirplaneGoBrr</a></h1>
-        <h2>This is my website... It contains some of my <a class="link" href="/projects">projects</a> and <a class="link" onclick="alert('Under maintenance')">files</a></h2>
-        <br><br>
-        <h2>My Socials:</h2>
-        <!-- Open in new tab -->
-        <h3><a href="https://discord.com/users/250029754076495874" target="_blank">Discord</a></h3>
-        <h3><a href="https://github.com/AirplanegoBrr" target="_blank">Github</a></h3>
-        <h3><a href="https://twitter.com/Airplanegobrr" target="_blank">Twitter</a></h3>
-        <h3><a href="https://www.reddit.com/user/gamesky1234" target="_blank">Reddit</a></h3>
-        <h3><a href="https://www.twitch.tv/airplanegobrr_streams" target="_blank">Twitch</a></h3>
-        <h3><a href="http://streams.airplanegobrr.xyz/" target="_blank">Custom Streaming</a></h3>
-        <h3><a href="https://www.youtube.com/channel/UCTkuvk9BzV8-L4tvVHdBqLQ" target="_blank">YouTube</a></h3>
-        <h3><a href="" target="_blank">NA</a></h3>
+
+    <div class="grid-container">
+        <div class="item1">
+            <h1>Hi! I'm Airplane!</h1>
+            <p>Also know as Charlie/Charles</p>
+            <p>I'm a programer, I'm <a id="yearsOld">17?</a> and live in the USA, CA</p>
+            <p>I've been programing for <a id="yearCoding">3?</a> years</p>
+            <br>
+
+            <p>I have <b>worked</b> in the following languages</p>
+            <div class="maina">
+                <p class="boxa">Javascript (NodeJS)</p>
+                <p class="boxa">Lua (Roblox)</p>
+                <p class="boxa">HTML, CSS</p>
+                <p class="boxa">Python</p>
+                <p class="boxa">C++ (for Vex)</p>
+            </div>
+
+            <br>
+            <p>I have worked with the following libraries</p>
+            <div class="maina">
+                <p class="boxa">Discord.js (JS) </p>
+                <p class="boxa">Express (JS)</p>
+                <p class="boxa">Socket.io (JS)</p>
+                <p class="boxa">Vex (C++)</p>
+            </div>
+
+            <p>I've also done some work in Python with AI!</p>
+
+            <h2>My Socials/Websites:</h2>
+            <!-- Open in new tab -->
+            <h3><a href="https://discord.com/users/250029754076495874" target="_blank">Discord</a></h3>
+            <h3><a href="https://github.com/AirplanegoBrr" target="_blank">Github</a></h3>
+            <h3><a href="https://twitter.com/Airplanegobrr" target="_blank">Twitter</a></h3>
+            <h3><a href="https://www.reddit.com/user/gamesky1234" target="_blank">Reddit</a></h3>
+            <h3><a href="https://www.twitch.tv/airplanegobrr_streams" target="_blank">Twitch</a></h3>
+            <h3><a href="http://streams.airplanegobrr.xyz/" target="_blank"><s>Custom Streaming</s> (dead)</a></h3>
+            <h3><a href="https://www.youtube.com/channel/UCTkuvk9BzV8-L4tvVHdBqLQ" target="_blank">YouTube</a></h3>
+            <h3><a href="https://ai.airplanegobrr.xyz/" target="_blank">AI Tools</a></h3>
+            <!--<h3><a href="" target="_blank">NA</a></h3>-->
+        </div>
+        <div class="item2">Menu</div>
     </div>
+    <script>
+        const yearsOldElm = document.getElementById("yearsOld")
+        const yearCodingElm = document.getElementById("yearCoding")
+
+        const birthDate = new Date("3/6/2006 7:00:00")
+        const yearStartCode = new Date("11/12/2020")
+        const currDate = new Date()
+
+        yearsOldElm.innerHTML = currDate.getFullYear() - birthDate.getFullYear()
+        yearCodingElm.innerHTML = currDate.getFullYear() - yearCodingElm.getFullYear()
+    </script>
 </body>
 
 </html>
