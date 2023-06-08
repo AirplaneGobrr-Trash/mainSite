@@ -8,8 +8,8 @@ const pagesLeft = {
     "Pingcord": "/pingcord"
 }
 const pagesRight = {
-    "Login": "/login",
-    "Register": "/register"
+    "Login": "https://auth.airplanegobrr.xyz/login",
+    "Register": "https://auth.airplanegobrr.xyz/register"
 }
 
 for (var page in pagesLeft) {
