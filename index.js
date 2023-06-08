@@ -5,9 +5,6 @@ const app = express();
 //Vars 
 const port = 8080
 
-//Stuff
-app.io = io;
-
 //Express setup
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
