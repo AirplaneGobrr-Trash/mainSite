@@ -31,7 +31,7 @@ app.get("/ip", (req, res)=>{
 })
 
 app.get("/server", (req, res)=>{
-    res.redirect("minecraft://?addExternalServer=Lucky%20World|airplanegobrr.us.to:25565")
+    res.redirect("minecraft://?addExternalServer=Robot%20Server|airplanegobrr.us.to:25565")
 })
 
 app.listen(port, () => {
